@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -16,6 +16,11 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 
+interface NavigationProps {
+  mode: "light" | "dark";
+  onModeChange: () => void;
+}
+
 const drawerWidth = 240;
 const navItems = [
   ["Expertise", "expertise"],
@@ -24,11 +29,9 @@ const navItems = [
   ["Contact", "contact"],
 ];
 
-function Navigation({ parentToChild, modeChange }: any) {
-  const { mode } = parentToChild;
-
-  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+function Navigation({ mode, onModeChange }: NavigationProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -38,26 +41,18 @@ function Navigation({ parentToChild, modeChange }: any) {
     const handleScroll = () => {
       const navbar = document.getElementById("navigation");
       if (navbar) {
-        const scrolled = window.scrollY > navbar.clientHeight;
-        setScrolled(scrolled);
+        setScrolled(window.scrollY > navbar.clientHeight);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (section: string) => {
-    console.log(section);
-    const expertiseElement = document.getElementById(section);
-    if (expertiseElement) {
-      expertiseElement.scrollIntoView({ behavior: "smooth" });
-      console.log("Scrolling to:", expertiseElement); // Debugging: Ensure the element is found
-    } else {
-      console.error('Element with id "expertise" not found'); // Debugging: Log error if element is not found
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -73,13 +68,13 @@ function Navigation({ parentToChild, modeChange }: any) {
       </p>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item[0]} disablePadding>
+        {navItems.map(([text, id]) => (
+          <ListItem key={text} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
-              onClick={() => scrollToSection(item[1])}
+              onClick={() => scrollToSection(id)}
             >
-              <ListItemText primary={item[0]} />
+              <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -105,19 +100,17 @@ function Navigation({ parentToChild, modeChange }: any) {
           >
             <MenuIcon />
           </IconButton>
-          {mode === "dark" ? (
-            <LightModeIcon onClick={() => modeChange()} />
-          ) : (
-            <DarkModeIcon onClick={() => modeChange()} />
-          )}
+          <IconButton color="inherit" onClick={onModeChange} sx={{ mr: 2 }}>
+            {mode === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
+          </IconButton>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
+            {navItems.map(([text, id]) => (
               <Button
-                key={item[0]}
-                onClick={() => scrollToSection(item[1])}
+                key={text}
+                onClick={() => scrollToSection(id)}
                 sx={{ color: "#fff" }}
               >
-                {item[0]}
+                {text}
               </Button>
             ))}
           </Box>
@@ -128,9 +121,7 @@ function Navigation({ parentToChild, modeChange }: any) {
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {

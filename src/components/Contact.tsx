@@ -1,10 +1,9 @@
-import React, { useRef, useState } from "react";
-import "../assets/styles/Contact.scss";
-// import emailjs from '@emailjs/browser';
+import { useRef, useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
 import TextField from "@mui/material/TextField";
+import "../assets/styles/Contact.scss"; // Changed from .scss to .css
 
 function Contact() {
   const [name, setName] = useState<string>("");
@@ -15,13 +14,23 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null); // Added proper type for form ref
 
-  const sendEmail = (e: any) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
     setNameError(name === "");
     setEmailError(email === "");
     setMessageError(message === "");
+
+    // If you want to use emailjs later, uncomment and type properly:
+    // if (form.current && !nameError && !emailError && !messageError) {
+    //   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    //     .then((result) => {
+    //       console.log(result.text);
+    //     }, (error) => {
+    //       console.log(error.text);
+    //     });
+    // }
   };
 
   return (
@@ -39,38 +48,43 @@ function Contact() {
             noValidate
             autoComplete="off"
             className="contact-form"
+            onSubmit={sendEmail} // Added proper form submission handler
           >
             <div className="form-flex">
               <TextField
                 required
-                id="outlined-required"
+                id="outlined-required-name"
                 label="Your Name"
                 placeholder="What's your name?"
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
+                  setNameError(false);
                 }}
                 error={nameError}
                 helperText={nameError ? "Please enter your name" : ""}
+                fullWidth
               />
               <TextField
                 required
-                id="outlined-required"
+                id="outlined-required-contact"
                 label="Email / Phone"
                 placeholder="How can I reach you?"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
+                  setEmailError(false);
                 }}
                 error={emailError}
                 helperText={
                   emailError ? "Please enter your email or phone number" : ""
                 }
+                fullWidth
               />
             </div>
             <TextField
               required
-              id="outlined-multiline-static"
+              id="outlined-multiline-static-message"
               label="Message"
               placeholder="Send me any inquiries or questions"
               multiline
@@ -79,14 +93,16 @@ function Contact() {
               value={message}
               onChange={(e) => {
                 setMessage(e.target.value);
+                setMessageError(false);
               }}
               error={messageError}
               helperText={messageError ? "Please enter the message" : ""}
+              fullWidth
             />
             <Button
+              type="submit" // Changed to type="submit" for proper form handling
               variant="contained"
               endIcon={<SendIcon />}
-              onClick={sendEmail}
             >
               Send
             </Button>

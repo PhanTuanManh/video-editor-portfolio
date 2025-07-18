@@ -1,7 +1,6 @@
-import React from "react";
 import "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -18,12 +17,12 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: "white", color: "rgb(39, 40, 34)" }}
-            contentArrowStyle={{ borderRight: "7px solid  white" }}
+            contentArrowStyle={{ borderRight: "7px solid white" }}
             date="Apr 16, 2025 - Jul 1, 2025"
             iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Video Editor </h3>
+            <h3 className="vertical-timeline-element-title">Video Editor</h3>
             <h4 className="vertical-timeline-element-subtitle">
               R&D Department - Athena Group (Holding)
             </h4>
@@ -35,8 +34,11 @@ function Timeline() {
               Branding, Cross-team Collaboration
             </p>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
+            contentStyle={{ background: "white", color: "rgb(39, 40, 34)" }}
+            contentArrowStyle={{ borderRight: "7px solid white" }}
             date="Apr 4, 2022 - Mar 3, 2023"
             iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
@@ -55,8 +57,11 @@ function Timeline() {
               Cross-functional Collaboration
             </p>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
+            contentStyle={{ background: "white", color: "rgb(39, 40, 34)" }}
+            contentArrowStyle={{ borderRight: "7px solid white" }}
             date="Oct 1, 2022 - Nov 1, 2022"
             iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
@@ -66,7 +71,7 @@ function Timeline() {
               Kokasi Viet Nam
             </h4>
             <a href="https://kokasi.vn/">
-              <p> https://kokasi.vn</p>
+              <p>https://kokasi.vn</p>
             </a>
             <p>
               Camera Operation, Gimbal Filming, Interview & Documentary

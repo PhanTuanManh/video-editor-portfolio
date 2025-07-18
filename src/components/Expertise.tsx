@@ -1,10 +1,9 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faVideo,
   faCameraRetro,
   faPalette,
+  faVideo,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Chip from "@mui/material/Chip";
 import "../assets/styles/Expertise.scss";
 

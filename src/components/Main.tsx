@@ -7,7 +7,10 @@ function Main() {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src="../assets/images/Avatar.jpg" alt="Avatar" />
+          <img
+            src="https://cdn.discordapp.com/attachments/1364074151014301798/1399290248521060482/Avatar.jpg?ex=68887618&is=68872498&hm=4fd703e31c6d51f543690130731bde8d7f0314000ca3f810c8b9ff30a08844c2&"
+            alt="Avatar"
+          />
         </div>
         <div className="content">
           <div className="social_icons">

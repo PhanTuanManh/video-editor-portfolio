@@ -15,7 +15,16 @@ const Project: React.FC = () => {
 
   const projects: ProjectItem[] = [
     {
-      id: 1,
+       id: 1,
+      title: "Vinmec Sao Phuong Dong",
+      description:
+        "Handled filming and post-production for an interview session with doctors and patients at Vinmec Sao Phuong Dong. Tasks included lighting setup, camera operation, editing, adding text effects, color grading, and overall post-production to deliver a polished final video.",
+      youtubeId: "cgdk2FfV_Wc", // Thay bằng ID video YouTube của bạn
+      link: "https://www.youtube.com/watch?v=cgdk2FfV_Wc",
+      thumbnailUrl: "https://img.youtube.com/vi/cgdk2FfV_Wc/hqdefault.jpg",
+    },
+    {
+      id: 2,
       title: "Sojin Hair Product Visual Ad",
       description:
         "Edited a promotional video featuring text effects and product cutouts for Sojin Hair. Created visual effects and clean background removal to showcase the hair care products.",
@@ -24,7 +33,7 @@ const Project: React.FC = () => {
       thumbnailUrl: "https://img.youtube.com/vi/FI7gVH-KbiY/hqdefault.jpg",
     },
     {
-      id: 2,
+      id: 3,
       title: "Athena Bling (Concept Music Video)",
       description:
         "Conceptualized, shot and edited a bling-style music video titled 'Athena Bling'. Handled all aspects from pre-production to final editing, creating a visually striking MV aesthetic.",
@@ -33,7 +42,7 @@ const Project: React.FC = () => {
       thumbnailUrl: "https://img.youtube.com/vi/ZNQp5u6Ji0Q/hqdefault.jpg",
     },
     {
-      id: 3,
+      id: 4,
       title: "Athena Group 3D Logo Intro",
       description:
         "Created a professional 3D animated logo introduction for Athena Group. Designed the motion graphics and transitions to establish brand identity.",
@@ -42,7 +51,7 @@ const Project: React.FC = () => {
       thumbnailUrl: "https://img.youtube.com/vi/Oiqb2iCaaZU/hqdefault.jpg",
     },
     {
-      id: 4,
+      id: 5,
       title: "BTEC FPT Student Selection Interviews",
       description:
         "Filmed and edited interview footage for BTEC FPT's selection process of students participating in the 'Step By Tien' program at Chu Van An High School. Responsible for all videography and post-production.",
@@ -51,7 +60,7 @@ const Project: React.FC = () => {
       thumbnailUrl: "https://img.youtube.com/vi/0FKzCuMNrqY/hqdefault.jpg",
     },
     {
-      id: 5,
+      id: 6,
       title: "BTEC FPT Cinematic School Tour (Short)",
       description:
         "Produced a vertical cinematic-style short film showcasing BTEC FPT school environment. Handled all cinematography and editing to create an atmospheric, narration-free visual experience.",
@@ -60,7 +69,7 @@ const Project: React.FC = () => {
       thumbnailUrl: "https://img.youtube.com/vi/eaqzmp3yf_c/hqdefault.jpg",
     },
     {
-      id: 6,
+      id: 7,
       title: "BTEC FPT Youthful Promotional TikTok",
       description:
         "Created an engaging TikTok-style advertisement for BTEC FPT with youthful, approachable content. Responsible for shooting and editing this dynamic social media promo.",
@@ -69,7 +78,7 @@ const Project: React.FC = () => {
       thumbnailUrl: "https://img.youtube.com/vi/WCTCGVPRVT0/hqdefault.jpg",
     },
     {
-      id: 7,
+      id: 8,
       title: "BTEC FPT 'Step By Tien' Program Trailer",
       description:
         "Produced the official trailer for BTEC FPT's 'Step By Tien' educational program. Handled all aspects of videography and editing to create an impactful promotional video.",

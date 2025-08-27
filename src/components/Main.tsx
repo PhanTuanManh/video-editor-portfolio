@@ -8,7 +8,7 @@ function Main() {
       <div className="about-section">
         <div className="image-wrapper">
           <img
-            src="https://cdn.discordapp.com/attachments/1364074151014301798/1399290248521060482/Avatar.jpg?ex=68887618&is=68872498&hm=4fd703e31c6d51f543690130731bde8d7f0314000ca3f810c8b9ff30a08844c2&"
+            src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/486476550_2144436379310604_1939335565797289260_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGjOzVp31PQvh7Fbw5wJUZEkEjwmBh_iMmQSPCYGH-IyVLAb55gUXRZwbHVNeIjHoZKLB9I-EFWANH7iTyFPA5T&_nc_ohc=N3pKx5-KV_8Q7kNvwHQbTCK&_nc_oc=AdkWFhet2BJqKQTLIYQW2Mho5MlLomN2Ox9ruMz9PWLM_mBbiHHg3hfHCsGkenkBSUJWNRlXpG5zyZOMeqNRYBsk&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=fYIYs4kfs4T0NlFxYPqRpA&oh=00_AfXaMU55jcnuDwK-jHSRGL_I-7l8uqqvE1gunOhyypMBmg&oe=68B46E8B"
             alt="Avatar"
           />
         </div>
